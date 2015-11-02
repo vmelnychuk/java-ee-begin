@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'App'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.7'
+}
+
+def projectName = "PROJECT-NAME"
+
+jar {
+    baseName = projectName
+    manifest {
+        attributes 'Main-Class': 'App'
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
