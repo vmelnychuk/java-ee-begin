@@ -1,7 +1,4 @@
-apply plugin: 'java'
-apply plugin: 'application'
-
-mainClassName = 'App'
+apply plugin: 'war'
 
 repositories {
     jcenter()
@@ -12,7 +9,7 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.7'
 }
 
-def projectName = "PROJECT-NAME"
+def projectName = "java-ee-begin"
 
 jar {
     baseName = projectName
@@ -22,5 +19,7 @@ jar {
 }
 
 dependencies {
+    compile 'log4j:log4j:1.2.17'
+    providedCompile 'javax.servlet:servlet-api:2.5'
     testCompile 'junit:junit:4.12'
 }
